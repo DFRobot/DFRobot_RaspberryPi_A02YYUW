@@ -62,7 +62,8 @@ class DFRobot_A02_Distance:
     i = 0
     while self.ser.inWaiting() == 0:
       i += 1
-      if i > 3:
+      time.sleep(0.05)
+      if i > 4:
         break
     i = 0
     while self.ser.inWaiting() > 0:
