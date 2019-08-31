@@ -71,8 +71,8 @@ class DFRobot_A02_Distance:
   set_dis_range(self, min, max):
     '''
       @brief    set distance range.
-      @param min: int    Minimum threshold
-      @param max: int    Maximum threshold
+      @param min: int(0~4500)    Minimum threshold  min < max 
+      @param max: int(0~4500)    Maximum threshold  min < max
     '''
 
   def measure(self):
