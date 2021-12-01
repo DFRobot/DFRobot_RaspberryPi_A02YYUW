@@ -24,6 +24,18 @@ Ranging sensor.
 2. Set the range of ranging. <br>
 3. Get ranging distance. <br>
 
+## Prerequisites
+
+Enable UART on Raspberry Pi with `sudo raspi-config`
+
+Install pip
+
+Run `pip install serial`
+
+Connect sensor to Raspberry Pi (e.g. red wire to 5v, black to ground, blue to pin 8 (GPIO 14), green to pin 10 (GPIO 15))
+
+Install git and clone this repo, or wget and unzip the source code.
+
 ## Installation
 
 This sensor should work with DFRobot_A02_Distance on RaspberryPi. <br>
