@@ -1,93 +1,84 @@
-# A02YYUW for Pi 
+# DFRobot_RaspberryPi_A02YYUW 
 
-This RaspberryPi expansion board can communicate with RaspberryPi via UART. <br>
-This is a ranging sensor. <br>
-Its' rang is 0 to 4500 mm <br>
+* [中文](./README_CN.md)
 
-To provide a Raspberry Pi library for DFRobot A02YYUW
+This is a ranging sensor, which is communicates with raspberry pi via UART interafce. Its main feature: <br> 
+1. Ranging range: 0~4500mm.
+2. Serial port configuration: 8 data bits, 1 stop bit, no parity bit.
+
+![产品效果图](resources/images/SEN0311.png)
+
+## Product Link（[https://www.dfrobot.com/product-1935.html](https://www.dfrobot.com/product-1935.html)）
+    SKU: SEN0311
 
 ## Table of Contents
 
 * [Summary](#summary)
-* [Feature](#feature)
 * [Installation](#installation)
 * [Methods](#methods)
+* [Compatibility](#compatibility)
+* [History](#history)
 * [Credits](#credits)
 
 ## Summary
 
-Ranging sensor.
-
-## Feature
-
-1. Ranging range: 0~4500mm. <br>
-2. Set the range of ranging. <br>
-3. Get ranging distance. <br>
+This is a Ranging sensor library based on python, its features:
+ 
+1. Set the range of ranging：0~4500mm. 
+2. Get ranging distance. 
 
 ## Installation
-
-This sensor should work with DFRobot_A02_Distance on RaspberryPi. <br>
-Run the program:
-
+1. To use this library, first download the library file<br>
+```python
+sudo git clone https://github.com/DFRobot/DFRobot_RaspberryPi_A02YYUW
 ```
-$> python2 demo_get_distance.py
+2. Open and run the routine. To execute a routine demo_x.py, enter python demo_x.py in the command line. For example, to execute the demo_get_distance.py routine, you need to enter :<br>
+
+```python
+python demo_get_distance.py 
+或 
+python2 demo_get_distance.py
+或 
+python3 demo_get_distance.py
 ```
 
 ## Methods
 
-```py
-
-class DFRobot_A02_Distance:
-
-  ''' Board status '''
-  STA_OK = 0x00
-  STA_ERR_CHECKSUM = 0x01
-  STA_ERR_SERIAL = 0x02
-  STA_ERR_CHECK_OUT_LIMIT = 0x03
-  STA_ERR_CHECK_LOW_LIMIT = 0x04
-
-  ''' last operate status, users can use this variable to determine the result of a function call. '''
-  last_operate_status = STA_OK
-
-  ''' variable '''
-  distance = 0
-
-  '''Maximum range'''
-  distance_max = 4500
-  distance_min = 0
-
-  def __init__(self):
-    '''
-      @brief    Board init
-    '''
-
-  def check_sum(self, list):
-    '''
-      @brief    Ranging packet verification
-      @param list: list    distance data
-      @return Packet checksum
-    '''
-
-  set_dis_range(self, min, max):
-    '''
-      @brief    set distance range.
-      @param min: int(0~4500)    Minimum threshold  min < max 
-      @param max: int(0~4500)    Maximum threshold  min < max
-    '''
-
-  def measure(self):
-    '''
-      @brief    Start ranging
-    '''
-
+```python
+  '''
+    @brief    set distance range.
+    @param min: Minimum ranging distance
+    @param max: Maximum ranging distance
+    @note condition: min < max
+  '''
+  def set_dis_range(self, min, max):
+      
+  '''
+    @brief    Get measured distance
+    @return    measured distance
+  '''
   def getDistance(self):
-    '''
-      @brief    Get measured distance
-      @return    measured distance
-    '''
 
 ```
+## Compatibility
+
+| 主板         | 通过 | 未通过 | 未测试 | 备注 |
+| ------------ | :--: | :----: | :----: | :--: |
+| RaspberryPi2 |      |        |   √    |      |
+| RaspberryPi3 |      |        |   √    |      |
+| RaspberryPi4 |  √   |        |        |      |
+
+* Python 版本
+
+| Python  | 通过 | 未通过 | 未测试 | 备注 |
+| ------- | :--: | :----: | :----: | ---- |
+| Python2 |  √   |        |        |      |
+| Python3 |  √   |        |        |      |
+
+## History
+
+- 2019/08/31 - Version 1.0.0 released.
 
 ## Credits
 
-·author [Arya xue.peng@dfrobot.com]
+Written by Arya(xue.peng@dfrobot.com), 2021. (Welcome to our [website](https://www.dfrobot.com/))
