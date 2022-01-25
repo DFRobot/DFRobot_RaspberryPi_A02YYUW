@@ -36,9 +36,9 @@ sudo git clone https://github.com/DFRobot/DFRobot_RaspberryPi_A02YYUW
 
 ```python
 python demo_get_distance.py 
-或 
+or
 python2 demo_get_distance.py
-或 
+or
 python3 demo_get_distance.py
 ```
 
