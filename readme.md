@@ -4,7 +4,7 @@
 
 This is a ranging sensor, which is communicates with raspberry pi via UART interafce. Its main feature: <br> 
 1. Ranging range: 0~4500mm.
-2. Serial port configuration: 8 data bits, 1 stop bit, no parity bit.
+2. Serial port configuration: 9600 baudrate, 8 data bits, 1 stop bit, no parity bit.
 
 ![产品效果图](resources/images/SEN0311.png)
 
