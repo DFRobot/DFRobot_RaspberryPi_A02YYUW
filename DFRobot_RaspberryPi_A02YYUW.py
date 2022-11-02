@@ -60,28 +60,44 @@ class DFRobot_A02_Distance:
     return (l[0] + l[1] + l[2])&0x00ff
 
   def _measure(self):
-    data = []
+    data = [0]*4
     i = 0
     timenow = time.time()
-    while self._ser.inWaiting() == 0:
-      i += 1
-      time.sleep(0.05)
-      if i > 4:
+
+    while (self._ser.inWaiting() < 4):
+      time.sleep(0.01)
+      if ((time.time() - timenow) > 1):
         break
-    i = 0
-    while self._ser.inWaiting() > 0:
-      rlt = self._ser.read()
-      try:
-        data.append(ord(rlt))
-      except:
-        data.append(rlt[0])
-      i += 1
-      if data[0] != 0xff:
-        i = 0
-        data = []
-      if i == 4:
-        break
-    #self._ser.read(self._ser.inWaiting()) 
+    
+    rlt = self._ser.read(self._ser.inWaiting())
+    #print(rlt)
+    
+    index = len(rlt)
+    if(len(rlt) >= 4):
+       index = len(rlt) - 4
+       while True:
+         try:
+           data[0] = ord(rlt[index])
+         except:
+           data[0] = rlt[index]
+         if(data[0] == 0xFF):
+           break
+         elif (index > 0):
+           index = index - 1
+         else:
+           break
+       #print(data)
+       if (data[0] == 0xFF):
+         try:
+           data[1] = ord(rlt[index + 1])
+           data[2] = ord(rlt[index + 2])
+           data[3] = ord(rlt[index + 3])
+         except:
+           data[1] = rlt[index + 1]
+           data[2] = rlt[index + 2]
+           data[3] = rlt[index + 3]
+         i = 4
+    #print(data)
     if i == 4:
       sum = self._check_sum(data)
       if sum != data[3]:
@@ -97,4 +113,5 @@ class DFRobot_A02_Distance:
         self.distance = self.distance_min
     else:
       self.last_operate_status = self.STA_ERR_DATA
+    return self.distance
 
