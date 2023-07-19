@@ -1,6 +1,6 @@
 # DFRobot_RaspberryPi_A02YYUW 
 
-* [Chinese](./README_CN.md)
+* [中文](./README_CN.md)
 
 This is a ranging sensor, which is communicates with raspberry pi via UART interafce. Its main feature: <br> 
 1. Ranging range: 0~4500mm.
