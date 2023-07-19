@@ -1,12 +1,12 @@
 # DFRobot_RaspberryPi_A02YYUW 
 
-* [中文](./README_CN.md)
+* [Chinese](./README_CN.md)
 
 This is a ranging sensor, which is communicates with raspberry pi via UART interafce. Its main feature: <br> 
 1. Ranging range: 0~4500mm.
 2. Serial port configuration: 9600 baudrate, 8 data bits, 1 stop bit, no parity bit.
 
-![产品效果图](resources/images/SEN0311.png)
+![Product image](resources/images/SEN0311.png)
 
 ## Product Link（[https://www.dfrobot.com/product-1935.html](https://www.dfrobot.com/product-1935.html)）
     SKU: SEN0311
@@ -62,18 +62,18 @@ python3 demo_get_distance.py
 ```
 ## Compatibility
 
-| 主板         | 通过 | 未通过 | 未测试 | 备注 |
-| ------------ | :--: | :----: | :----: | :--: |
-| RaspberryPi2 |      |        |   √    |      |
-| RaspberryPi3 |      |        |   √    |      |
-| RaspberryPi4 |  √   |        |        |      |
+| Board        | Pass | Failed | Not tested | Remarks |
+| ------------ | :--: | :----: | :--------: | :-----: |
+| RaspberryPi2 |      |        |     √      |         |
+| RaspberryPi3 |      |        |     √      |         |
+| RaspberryPi4 |  √   |        |            |         |
 
-* Python 版本
+* Python Version
 
-| Python  | 通过 | 未通过 | 未测试 | 备注 |
-| ------- | :--: | :----: | :----: | ---- |
-| Python2 |  √   |        |        |      |
-| Python3 |  √   |        |        |      |
+| Python  | Pass | Failed | Not tested | Remarks |
+| ------- | :--: | :----: | :--------: | ------- |
+| Python2 |  √   |        |            |         |
+| Python3 |  √   |        |            |         |
 
 ## History
 
