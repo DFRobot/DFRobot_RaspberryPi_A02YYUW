@@ -79,6 +79,7 @@ python3 demo_get_distance.py
 ## 历史
 
 - 2019/08/31 - 1.0.0 版本
+- 2026/10/22 - 1.0.1 版本，默认串口由 /dev/ttyAMA0 改为 /dev/serial0，并支持传入串口，如 DFRobot_A02_Distance('/dev/ttyUSB0')
 
 ## 创作者
 

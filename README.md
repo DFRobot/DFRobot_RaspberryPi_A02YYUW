@@ -78,6 +78,7 @@ python3 demo_get_distance.py
 ## History
 
 - 2019/08/31 - Version 1.0.0 released.
+- 2026/10/22 - Version 1.0.1 released. Default serial port changed from /dev/ttyAMA0 to /dev/serial0, and the port can now be passed in, e.g. DFRobot_A02_Distance('/dev/ttyUSB0').
 
 ## Credits
 
